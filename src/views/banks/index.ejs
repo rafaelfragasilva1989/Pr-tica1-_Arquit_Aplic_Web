@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>MVC Bancos | ATV01 Node.JS</title>
+
+    <style>
+        .container h1 {
+            margin-left: 15px;
+        }
+
+        .wrapper {
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .bank {
+            width: 31%;
+            margin: 0 15px 30px 15px;
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(197, 197, 197);
+            border-radius: 10px;
+            justify-content: center;
+        }
+
+        .bank:hover {
+            background-color: rgb(163, 163, 163);
+        }
+
+        .col {
+            margin-right: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bancos Brasileiros</h1>
+        <hr />
+        <br />
+        <% if (banks.length> 0) { %>
+            <div class="wrapper">
+                <% for(var i=0; i < banks.length; i++) {%>
+                    <div class="bank">
+                        <div class="col">
+                            <h4>Name:</h4>
+                            <p>COMPE:</p>
+                            <p>Document:</p>
+                            <p>Type:</p>
+                            <p>Url:</p>
+                        </div>
+                        <div class="data">
+                            <h4>
+                                <%= banks[i].ShortName %>
+                            </h4>
+                            <p>
+                                <%= banks[i].COMPE %>
+                            </p>
+                            <p>
+                                <%= banks[i].Document %>
+                            </p>
+                            <p>
+                                <%= banks[i].Type %>
+                            </p>
+                            <p>
+                                <%= banks[i].Url %>
+                            </p>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <% } %>
+    </div>
+</body>
+
+</html>
